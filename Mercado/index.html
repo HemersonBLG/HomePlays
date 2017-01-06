@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lembrete de Compras</title>
+	<!-- Bootstraps-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link href="css/estilos.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class = "container" ng-controller='Mercado'>
+      <div class="row">
+        Site para inscrição de produtos
+      </div>
+
+      <div class = "row">
+        <input type = "text" ng-model = "produtos" placeholder="Digite o nome do Produto!"></input>
+        <input type="number" ng-model = "quantidadeProdutos" placeholder="000" style="height: 26px; width: 45px"> </input>
+        <button ng-click="enviaProdutos()">Enviar Produtos</button>
+        <button ng-click="limpaProdutos()">Apaga Produtos</button>
+        <br>
+        Produtos já inscritos:<br>
+        <div ng-repeat="lista in lista track by $index; elementos in qtElemento track by $index">
+        {{lista}} {{elementos}}
+        </div>
+
+    </div>
+    <script src = "js/angular.min.js"></script>
+    <script src = "js/meuJS.js"> </script>
+  </body>
+</html>
