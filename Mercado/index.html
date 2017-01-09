@@ -16,16 +16,40 @@
         Site para inscrição de produtos
       </div>
 
-      <div class = "row">
-        <input type = "text" ng-model = "produtos" placeholder="Digite o nome do Produto!"></input>
-        <input type="number" ng-model = "quantidadeProdutos" placeholder="000" style="height: 26px; width: 45px"> </input>
+      <div class="row">
+        <input type="text" ng-model="produtos" placeholder="Digite o nome do Produto!"></input>
+        <input type="number" min="1" ng-model="quantidadeProdutos" placeholder="000" style="height: 26px; width: 45px"> </input>
+      <!--  <input type="text" ng-model="pesagemProduto" placeholder="Medida do Produto" style="height: 26px; width: 125px" disabled="true"> </input> -->
+        <select ng-model="pesagemProduto">
+          <option value="" disabled selected hidden>Selecione a Medida</option>
+          <option value="kg">Kilo</option>
+          <option value="litro">Litro</option>
+          <option value="pacote">Pacotes</option>
+          <option value="gramas">Gramas</option>
+          <option value="ml">ML</option>
+        </select>
         <button ng-click="enviaProdutos()">Enviar Produtos</button>
         <button ng-click="limpaProdutos()">Apaga Produtos</button>
+
         <br>
-        Produtos já inscritos:<br>
-        <div ng-repeat="lista in lista track by $index; elementos in qtElemento track by $index">
-        {{lista}} {{elementos}}
-        </div>
+        <br>
+
+        <table border="1" class="tabelaProdutos">
+          <tr>
+            <th colspan="3">Já Inseridos<th>
+          </tr>
+          <tr>
+            <td> Produtos </td>
+            <td>Quantidades </td>
+            <td> Medida </td>
+          </tr>
+
+          <tr ng-repeat="lista in lista track by $index">
+            <td align="left">{{lista.produto}}</td>
+            <td align="left">{{lista.quantidade}}</td>
+            <td align="left">{{lista.medida}}</td>
+          </tr>
+        </table>
 
     </div>
     <script src = "js/angular.min.js"></script>
