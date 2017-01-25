@@ -36,15 +36,17 @@
 
         <table border="1" class="tabelaProdutos">
           <tr>
-            <th colspan="3">Já Inseridos<th>
+            <th colspan="4">Já Inseridos</th>
           </tr>
           <tr>
-            <td> Produtos </td>
-            <td>Quantidades </td>
-            <td> Medida </td>
+            <td>ID Produto</td>
+            <td>Produtos</td>
+            <td>Quantidades</td>
+            <td>Medida</td>
           </tr>
 
           <tr ng-repeat="lista in lista track by $index">
+            <td align="right">{{lista.IDProd}}</td>
             <td align="left">{{lista.produto}}</td>
             <td align="left">{{lista.quantidade}}</td>
             <td align="left">{{lista.medida}}</td>
