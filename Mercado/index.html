@@ -30,19 +30,21 @@
         </select>
         <button ng-click="enviaProdutos()">Enviar Produtos</button>
         <button ng-click="limpaProdutos()">Apagar Produtos</button>
+        <button ng-click="limpaSelecionados()">Apaga Selecionados </button>
 
         <br>
         <br>
 
         <table border="1" class="tabelaProdutos">
           <tr>
-            <th colspan="4">Já Inseridos</th>
+            <th colspan="5">Já Inseridos</th>
           </tr>
           <tr>
             <td>ID Produto</td>
             <td>Produtos</td>
             <td>Quantidades</td>
             <td>Medida</td>
+            <td>Teste</td>
           </tr>
 
           <tr ng-repeat="lista in lista track by $index">
@@ -50,8 +52,10 @@
             <td align="left">{{lista.produto}}</td>
             <td align="left">{{lista.quantidade}}</td>
             <td align="left">{{lista.medida}}</td>
+            <td align="center"><input type="checkbox" ng-model="lista.checked"></input></td>
           </tr>
         </table>
+        {{lista}}
 
     </div>
     <script src = "js/angular.min.js"></script>
